@@ -36,8 +36,8 @@ source $HOME/.zplug/init.zsh
 # ZSH_THEME="spaceship"
 # Plugins for oh-my-zsh
 # plugins=(git)
-autoload -U compinit
-compinit
+# autoload -U compinit
+# compinit
 
 
 # ==========================================================================
@@ -48,9 +48,9 @@ alias l='ls'				  # for when I hit enter too fast \_(*_*)_/
 alias la='ls -a'			  # show all
 alias ll='ls -alrt'			  # show all, long, reverse, time
 alias cp='cp -i'                          # confirm before overwriting something
-alias df='df -h'                          # human-readable sizes
+# alias df='df -h'                          # human-readable sizes
 alias open='xdg-open'
-alias free='free -m'                      # show sizes in MB
+# alias free='free -m'                      # show sizes in MB
 #alias np='nano -w PKGBUILD'
 alias more=less
 alias ..='cd ..'			  # Shorten moving up the filepath
@@ -59,13 +59,16 @@ alias .3='cd ../../../'
 alias .4='cd ../../../../'
 alias .5='cd ../../../../../'
 alias vi=vim				  # VIM by DEFAULT
-alias svi='sudo vi'
-#alias vis='vim "+set si"'
-alias ping='ping -c 10 -s .2 -i .2'
+# alias svi='sudo vi'
+# alias vis='vim "+set si"'
+alias ping='ping -c 10 -s .2 -i .2 google.com'
 alias chrome='/opt/google/chrome/chrome'  # Repeat for all browsers
 alias ports='netstat -tulanp'		  # Show all open ports
-alias vba='visualboyadvance-m &|'	  # Launch VBA-M from terminal
+# alias vba='visualboyadvance-m &|'	  # Launch VBA-M from terminal
 alias bye='exit'
+alias qacp='pwd; git add -A; git commit -m "update"; git push'
+alias cl='clear'
+alias powerup='sudo su'
 
 # ==========================================================================
 #                               Functions
