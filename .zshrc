@@ -44,6 +44,7 @@ source $HOME/.zplug/init.zsh
 #                              Aliases
 # ==========================================================================
 # General Purpose
+alias e='cd ~/code/excelsior/'
 alias l='ls'				  # for when I hit enter too fast \_(*_*)_/
 alias la='ls -a'			  # show all
 alias ll='ls -alrt'			  # show all, long, reverse, time
@@ -67,7 +68,7 @@ alias ports='netstat -tulanp'		  # Show all open ports
 # alias vba='visualboyadvance-m &|'	  # Launch VBA-M from terminal
 alias bye='exit'
 alias qacp='pwd; git add -A; git commit -m "update"; git push'
-alias cl='clear'
+alias c='clear'
 alias powerup='sudo su'
 
 # ==========================================================================
