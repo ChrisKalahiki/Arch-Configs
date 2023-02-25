@@ -1,5 +1,11 @@
 # Arch-Configs
-#### This is where I store all of the configurations I need to set up a clean Arch or Manjaro install.
-I choose to use zsh, so I include my .zshrc file.  
-Alacritty is my terminal of choice, so I include the config file for that as well.  
-Finally, I use yaourt to install packages for the AUR and include a list of the various packages that I need installed.
+## Overview
+This is where I store the various dot files that I use on my Linux system.
+
+### ZSH
+Personally, I like using ZSH as my default Shell. Included is my `.zshrc` file, which contains all of the various aliases and functions that I use.
+To use my `.zshrc` file, simply copy it to your home directory and rename it to `.zshrc`.
+
+### Neovim
+I use Neovim as my default text editor. Included is my `init.vim` file, which contains all of the various plugins and settings that I use.
+To use my `init.vim` file, simply copy it to your home directory and rename it to `.config/nvim/init.vim`.
