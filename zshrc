@@ -1,4 +1,11 @@
 # ==========================================================================
+#                               Open Tmux
+# ==========================================================================
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
+
+# ==========================================================================
 #                           Declare Variables
 # ==========================================================================
 # Common ENV Variables
@@ -70,6 +77,10 @@ alias bye='exit'
 alias qacp='pwd; git add -A; git commit -m "update"; git push'
 alias c='clear'
 alias powerup='sudo su'
+alias palmetto='ssh ckalahi@slogin.palmetto.clemson.edu'
+alias anvil='ssh x-ckalahiki@anvil.rcac.purdue.edu'
+alias gemini='python /home/h3r0/code/jarvis/src/gemini-pro-cli.py'
+alias pi='ssh kalahiki'
 
 # ==========================================================================
 #                               Functions
@@ -144,3 +155,39 @@ if zplug check "denysdovhan/spaceship-prompt"; then
     #PROMPT='%F{red}%n%f@%F{blue}%m%f %F{yellow}%1~%f %# '
     #RPROMPT='[%F{yellow}%?%f]'
 fi
+
+# bun completions
+[ -s "/home/h3r0/.bun/_bun" ] && source "/home/h3r0/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/h3r0/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/h3r0/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/h3r0/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/h3r0/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/opt/openmpi/lib
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/h3r0/google-cloud-sdk/path.zsh.inc' ]; then . '/home/h3r0/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/h3r0/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/h3r0/google-cloud-sdk/completion.zsh.inc'; fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+. "$HOME/.cargo/env"
