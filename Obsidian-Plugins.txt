@@ -1,0 +1,14 @@
+Better Word Count
+Calendar
+Custom State for Task List
+Dataview
+Editor Syntax Highlight
+Editor Width Slider
+Emoji Shortcodes
+From Template
+Highlightr
+Kanban
+Tag Wrangler
+TagFolder
+WakaTime
+Zotero Integration
