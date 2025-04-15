@@ -20,6 +20,9 @@ export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=10000
 export SAVEHIST=$HISTSIZE
 
+# Driver issue resolution for pygame and other libraries using C++
+export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6
+
 # ==========================================================================
 #                         Loading From Sources
 # ==========================================================================
@@ -78,6 +81,7 @@ alias qacp='pwd; git add -A; git commit -m "update"; git push'
 alias c='clear'
 alias powerup='sudo su'
 alias palmetto='ssh ckalahi@slogin.palmetto.clemson.edu'
+alias ivy='ssh ckalahi@ivy2.cs.clemson.edu'
 alias anvil='ssh x-ckalahiki@anvil.rcac.purdue.edu'
 alias gemini='python /home/h3r0/code/jarvis/src/gemini-pro-cli.py'
 alias pi='ssh kalahiki'
