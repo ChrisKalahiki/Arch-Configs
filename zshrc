@@ -1,11 +1,4 @@
 # ==========================================================================
-#                               Open Tmux
-# ==========================================================================
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux
-fi
-
-# ==========================================================================
 #                           Declare Variables
 # ==========================================================================
 # Common ENV Variables
@@ -22,6 +15,9 @@ export SAVEHIST=$HISTSIZE
 
 # Driver issue resolution for pygame and other libraries using C++
 export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6
+
+export TERM="xterm-256color"
+export COLORTERM="truecolor"
 
 # ==========================================================================
 #                         Loading From Sources
@@ -55,6 +51,7 @@ source $HOME/.zplug/init.zsh
 # ==========================================================================
 # General Purpose
 alias e='cd ~/code/excelsior/'
+alias ls='exa'
 alias l='ls'				  # for when I hit enter too fast \_(*_*)_/
 alias la='ls -a'			  # show all
 alias ll='ls -alrt'			  # show all, long, reverse, time
@@ -95,7 +92,10 @@ alias pi='ssh kalahiki'
 #                          zplug Configurations
 # ===========================================================================
 # Make sure to use double quotes to prevent shell expansion
-zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+# zplug zdharma/fast-syntax-highlighting, defer:2
+# zplug "trapd00r/LS_COLORS", use:"LS_COLORS", defer:3
+zplug "joel-porquet/zsh-dircolors-solarized", defer:3
 
 # Supports oh-my-zsh plugins and the like
 zplug "plugins/git",   from:oh-my-zsh
@@ -195,3 +195,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 . "$HOME/.cargo/env"
+
+# ==========================================================================
+#                               Open Tmux
+# ==========================================================================
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+ exec tmux
+fi
+
